@@ -45,7 +45,7 @@ const SingleMenuItem = (props: Props) => {
                         <div className="flex items-center">
                           {item.icon ? (
                             <div className="flex items-center">
-                              <item.icon className=" mr-2 h-3 w-3 " />
+                              <item.icon  width={2} height={2} color="currentColor" />
                               {item.name}
                             </div>
                           ) : (
