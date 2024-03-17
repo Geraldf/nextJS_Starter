@@ -1,40 +1,66 @@
-import Link from 'next/link'
+import Image from "next/image"
+import Link from "next/link"
 
-import { siteConfig } from '@/config/site'
-import { buttonVariants } from '@/components/ui/button'
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+
+import { Icons } from "@/components/icons"
+import {
+  PageActions,
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from "@/components/page-header"
+import { buttonVariants } from "@/registry/default/ui/button"
+
 
 export default function IndexPage() {
   return (
-    <section className='container grid items-center gap-2 py-2 md:p-0'>
-      <div className='flex max-w-[980px] flex-col items-start gap-0'>
-        <h1 className='text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl'>
-          Beautifully designed components <br className='hidden sm:inline' />
-          built with Radix UI and Tailwind CSS.
-        </h1>
-
-        <p className='max-w-[700px] text-lg text-muted-foreground'>
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
-      </div>
-      <div className='flex gap-4'>
-        <Link
-          href={siteConfig.links.docs}
-          target='_blank'
-          rel='noreferrer'
-          className={buttonVariants()}
-        >
-          Documentation
-        </Link>
-        <Link
-          target='_blank'
-          rel='noreferrer'
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: 'outline' })}
-        >
-          GitHub
-        </Link>
-      </div>
-    </section>
+    <div className="container relative">
+      <PageHeader>
+       
+        <PageHeaderHeading>Build your component library</PageHeaderHeading>
+        <PageHeaderDescription>
+          Beautifully designed components that you can copy and paste into your
+          apps. Accessible. Customizable. Open Source.
+        </PageHeaderDescription>
+        <PageActions>
+          <Link href="/docs" className={cn(buttonVariants())}>
+            Get Started
+          </Link>
+          <Link
+            target="_blank"
+            rel="noreferrer"
+            href={siteConfig.links.github}
+            className={cn(buttonVariants({ variant: "outline" }))}
+          >
+            <Icons.gitHub className="mr-2 h-4 w-4" />
+            GitHub
+          </Link>
+        </PageActions>
+      </PageHeader>
+     
+      <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
+        <Image
+          src="/examples/mail-dark.png"
+          width={1280}
+          height={727}
+          alt="Mail"
+          className="hidden dark:block"
+        />
+        <Image
+          src="/examples/mail-light.png"
+          width={1280}
+          height={727}
+          alt="Mail"
+          className="block dark:hidden"
+        />
+      </section>
+      <section className="hidden md:block">
+        <div className="overflow-hidden rounded-lg border bg-background shadow-lg">
+        
+        </div>
+      </section>
+    </div>
   )
 }

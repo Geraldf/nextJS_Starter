@@ -1,55 +1,13 @@
-import { title } from "process";
-import { FaceIcon, ImageIcon, SunIcon } from "@radix-ui/react-icons";
-
-
-
-import { NavElements, NavItems } from "@/types/nav";
-import { HomeIcon, TestIcon } from "@/components/icons/AppIcons";
-
-
-
-
-
-export type SiteConfig = typeof siteConfig
-
 export const siteConfig = {
   name: "Fuchsclan",
+  url: "https://Fuchsclan.de",
+  ogImage: "../components/fox.svg",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
   links: {
     twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    github: "https://github.com/shadcn-ui/ui",
   },
 }
-export const SiteDescription = siteConfig.description
-export const Nav: NavItems[] = [
-  {
-    title: "Home",
-    elements: [],
-  },
-  {
-    title: "Home2",
-    elements: [
-     
-    ],
-  },
-]
 
-
-export const SiteNavElements: NavElements[] = [
-  {
-    name: "Home",
-    url: "/",
-    icon: HomeIcon,
-  },
- 
-  {
-    name: "Test4",
-    url: "/test",
-  },
-  {
-    name: "SNOW",
-    url: "/snow",
-  },
-]
+export type SiteConfig = typeof siteConfig

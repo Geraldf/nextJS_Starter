@@ -17,7 +17,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  logo: (props: LucideProps) => (
+  logo_ChadCn: (props: LucideProps) => (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' {...props}>
       <path
         fill='currentColor'
@@ -25,6 +25,8 @@ export const Icons = {
       />
     </svg>
   ),
+  
+
   gitHub: (props: LucideProps) => (
     <svg viewBox='0 0 438.549 438.549' {...props}>
       <path
